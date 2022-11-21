@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <ehcache>
+
+<!-- 视屏地址   https://www.bilibili.com/video/BV11e4y1n7BH?p=25&spm_id_from=pageDriver&vd_source=a9df6400fe6d580fe3ecf7e212847328-->
+
+<!--    磁盘的存储位置-->
+    <diskStore path="java.io.tmpdir/ehcache"/>
+<!--    默认换存-->
+    <defaultCache
+        maxEntriesLocalHeap="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        maxEntriesLocalDisk="10000000"
+        diskExpiryThreadIntervalSeconds="120"
+        memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+    <cache
+        name="HelloWorldCache"
+        eternal="false"
+        timeToIdleSeconds="5"
+        timeToLiveSeconds="5"
+        overflowToDisk="false"
+        memoryStoreEvictionPolicy="LRU"/>
+
+</ehcache>
